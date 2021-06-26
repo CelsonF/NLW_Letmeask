@@ -1,0 +1,24 @@
+@import "./base";
+
+#page-auth{
+    display:flex;
+    align-items:stretch;
+    height:100vh;
+
+    aside {
+        flex:6;
+
+        background-color:$purpleColor;
+        color:#fff;
+
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+
+        padding: 120px 80px;
+    }
+
+    main {
+        flex:7;
+    }
+}
