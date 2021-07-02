@@ -1,7 +1,6 @@
 @import "base.scss";
 
 .button {
-    margin-top: 3rem;
     height: 3.125rem;
     border-radius: 0.5rem;
     font-weight: 500;
@@ -14,6 +13,7 @@
 
     cursor: pointer;
     border: 0;
+    padding: 1rem;
 
     transition: filter 0.2s;
 
