@@ -1,0 +1,68 @@
+@import "../../styles/base.scss";
+
+.question {
+  background-color: #FFF;
+  border-radius:0.5rem;
+  box-shadow:0 0.125rem 0.75rem rgba($color: #000000, $alpha: 0.04);
+  padding: 1.5rem;
+
+  & + .question {
+      margin-top: 0.5rem;
+  }
+
+  p {
+    color:$textColor;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+
+
+    .user-info {
+        display: flex;
+        align-items: center;
+
+        > img {
+            width: 2rem;
+            border-radius: 50%;
+            border: 2px solid $purpleColor;
+        }
+
+        span {
+            margin-left: 0.5rem;
+            color: $grayDark;
+            font-size: 0.875rem;
+        }
+    }
+
+    button {
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+      transition: filter 0.2s;
+
+      &.like-button {
+        color: $grayDark;
+        display: flex;
+        align-items: flex-end;
+        gap: 0.5rem;
+
+        &.liked {
+          color: $purpleColor; 
+          svg path {
+            stroke: $purpleColor;
+          }
+        
+        }
+      }
+
+      &:hover {
+        filter: brightness(0.7);
+      }
+    }
+
+  }
+}
