@@ -40,13 +40,24 @@ export function Home() {
 
       const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
+       
       if(!roomRef.exists())
       {
           alert('Room does not exists.');
           return;
       }
 
-      history.push(`/rooms/${roomCode}`);
+      if(roomRef.val().closedAt) {
+          alert('Room already closed.')
+          return;
+      }
+
+      if(user?.id === roomRef.val().authorId ) {
+         return history.push(`/admin/rooms/${roomCode}`);
+      }
+      
+        history.push(`/rooms/${roomCode}`);
+
     }
 
 
