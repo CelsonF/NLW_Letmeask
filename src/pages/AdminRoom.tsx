@@ -1,9 +1,13 @@
 import { useHistory, useParams } from 'react-router-dom';
+
 import logoImg from '../assets/images/logo.svg';
 import deleteImg from '../assets/images/delete.svg'
+import checking from '../assets/images/check.svg'
+import answering from '../assets/images/answer.svg'
+
 import { Button } from '../components/Button';
 import { Question } from '../components/Question';
-import { RoomCode } from '../components/RoomCode';
+import { RoomCode } from '../components/RoomCode/Index';
 
 import { useRoom } from '../hooks/useRoom';
 
@@ -34,7 +38,18 @@ export function AdminRoom() {
       if (window.confirm("Tem certeza que deseja excluir essa pergunta ?")) {
          await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
       }
+    }
 
+    async function handleCheckQuestionAsAnswered(questionId:string) {
+        await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+            isAnswered:true,
+        });
+    }
+
+    async function handleHighLightQuestion(questionId:string) {
+        await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+            isHighLighted:true,
+        });
     }
 
     return (
@@ -64,6 +79,12 @@ export function AdminRoom() {
                                 content={question.content}
                                 author={question.author}
                             >
+                                <button type="button" onClick={() => handleCheckQuestionAsAnswered(question.id)}>
+                                    <img src={checking} alt="Marcar pergunta como respondida." />
+                                </button>
+                                <button type="button" onClick={() => handleHighLightQuestion(question.id)}>
+                                    <img src={answering} alt="Destacar pergunta" />
+                                </button>
                                 <button type="button" onClick={() => handleDeleteQuestion(question.id)}>
                                     <img src={deleteImg} alt="Deletar questão." />
                                 </button>
