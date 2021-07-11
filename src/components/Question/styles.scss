@@ -10,6 +10,20 @@
       margin-top: 0.5rem;
   }
 
+
+  &.highlighted {
+    background-color: #f4f8ff;
+    border: 1px solid $purpleColor;
+
+    footer .user-info span{
+      color: $grayDark;
+    }
+  }
+
+  &.answered {
+   background-color: #dbdcdd;
+  }
+
   p {
     color:$textColor;
   }
