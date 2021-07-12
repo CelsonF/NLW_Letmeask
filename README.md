@@ -9,7 +9,7 @@
 </p>
 
 <h1 align="center">
-    <img alt="Letmeask" src=".github/cover.svg" />
+    <img alt="Letmeask" src=".github/screen.png" />
 </h1>
 
 <br>
@@ -36,16 +36,21 @@ Para iniciá-lo, siga os passos abaixo:
 # Instalar as dependências
 $ yarn
 ou
-npm install
+$ npm install
 
 # Iniciar o projeto
 $ yarn start
 ou
-npm start
+$ npm start
 ```
 O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
+### 📝 Notas
+
 Lembrando que será necessário criar uma conta no [Firebase](https://firebase.google.com/) e um projeto para disponibilizar um Realtime Database.
+
+<strong>Antes</strong> de executar o projeto , crie um arquivo de variaveis ambientes chamado ```.env.local``` , contendo as suas váriaveis de ambiente disponibilizadas pelo Firebase.
+
 
 ## 💻 Projeto
 
